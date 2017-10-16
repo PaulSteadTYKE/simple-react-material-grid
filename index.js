@@ -11,7 +11,7 @@ import SimpleReactMaterialGrid from './simple-react-material-grid';
 class GridDemo extends Component {
 
     render() {
-        injectTapEventPlugin();
+        // injectTapEventPlugin();
 
         return (
             <MuiThemeProvider>
