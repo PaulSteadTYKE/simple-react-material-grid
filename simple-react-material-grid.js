@@ -24,13 +24,13 @@ class SimpleReactMaterialGrid extends Component {
         // rect({ctx, x: 10, y: 10, width: 50, height: 50});
         // rect({ctx, x: 110, y: 110, width: 50, height: 50});
 
-        buildGrid(ctx, 300, 300, 5, "grey", 2);
+        buildGrid(ctx, 500, 500, 50, 30, "grey", 2);
     }
 
 
     render() {
         return (
-            <canvas ref="canvas" width={300} height={300}/>
+            <canvas ref="canvas" width={500} height={500}/>
         );
 
 
@@ -43,10 +43,10 @@ function rect(props) {
     ctx.fillRect(x, y, width, height);
 }
 
-function buildGrid(ctx, width, height, gridPixelSize, color, gap) {
+function buildGrid(ctx, canvasWidth, canvasHeight, cellWidth, cellHeight, color, gap) {
 
 
-    ctx.clearRect(0, 0, width, height);
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
     // var canvas = $('#' + div + '').get(0);
     // var ctx = canvas.getContext("2d");
@@ -56,10 +56,10 @@ function buildGrid(ctx, width, height, gridPixelSize, color, gap) {
     ctx.strokeStyle = color;
 
     // horizontal grid lines
-    for (var i = 0; i <= height; i = i + gridPixelSize) {
+    for (var i = 0; i <= canvasHeight; i = i + cellHeight) {
         ctx.beginPath();
         ctx.moveTo(0, i);
-        ctx.lineTo(width, i);
+        ctx.lineTo(canvasWidth, i);
         if (i % parseInt(gap) == 0) {
             ctx.lineWidth = 0.5;
         } else {
@@ -70,10 +70,10 @@ function buildGrid(ctx, width, height, gridPixelSize, color, gap) {
     }
 
     // vertical grid lines
-    for (var j = 0; j <= width; j = j + gridPixelSize) {
+    for (var j = 0; j <= canvasWidth; j = j + cellWidth) {
         ctx.beginPath();
         ctx.moveTo(j, 0);
-        ctx.lineTo(j, height);
+        ctx.lineTo(j, canvasHeight);
         if (j % parseInt(gap) == 0) {
             ctx.lineWidth = 0.5;
         } else {
@@ -83,8 +83,8 @@ function buildGrid(ctx, width, height, gridPixelSize, color, gap) {
         ctx.stroke();
     }
 
-    for(var ii = 0; ii <= width; ii+=2) {
-        for(var jj=0; jj <= height; jj+=2) {
+    for(var ii = 0; ii <= canvasWidth; ii+=2) {
+        for(var jj=0; jj <= canvasHeight; jj+=2) {
             ctx.clearRect(ii,jj,1,1);
         }
     }
