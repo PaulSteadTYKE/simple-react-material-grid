@@ -1,12 +1,13 @@
 'use strict';
 
 import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
+// import ReactDOM from 'react-dom'
+// import ReactCanvas from 'react-canvas';
 
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// import injectTapEventPlugin from 'react-tap-event-plugin';
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import SimpleReactMaterialGrid from './simple-react-material-grid';
+import SimpleGridExample from './SimpleGridExample.jsx';
 
 class GridDemo extends Component {
 
@@ -16,7 +17,7 @@ class GridDemo extends Component {
         return (
             <MuiThemeProvider>
                 <div>
-                    <div className="main_body" ><SimpleReactMaterialGrid/></div>
+                    <div className="main_body" ><SimpleGridExample/></div>
                 </div>
             </MuiThemeProvider>
         );

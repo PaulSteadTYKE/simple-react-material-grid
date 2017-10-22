@@ -1,8 +1,14 @@
 'use strict';
 
 import React, {Component} from 'react'
+import ReactCanvas from 'react-canvas';
 
 class SimpleReactMaterialGrid extends Component {
+
+    var Surface = ReactCanvas.Surface;
+    var Image = ReactCanvas.Image;
+    var Text = ReactCanvas.Text;
+
 
     constructor(props) {
         super(props);
@@ -18,20 +24,33 @@ class SimpleReactMaterialGrid extends Component {
     }
 
     updateCanvas() {
-
         const ctx = this.refs.canvas.getContext('2d');
-        // draw children “components”
-        // rect({ctx, x: 10, y: 10, width: 50, height: 50});
-        // rect({ctx, x: 110, y: 110, width: 50, height: 50});
-
         buildGrid(ctx, 500, 500, 50, 30, "grey", 2);
     }
 
 
+
     render() {
+
+        var surfaceWidth = window.innerWidth;
+        var surfaceHeight = window.innerHeight;
+        var imageStyle = this.getImageStyle();
+        var textStyle = this.getTextStyle();
+
         return (
-            <canvas ref="canvas" width={500} height={500}/>
+            <Surface width={surfaceWidth} height={surfaceHeight} left={0} top={0}>
+                <Image style={imageStyle} src='...' />
+                <Text style={textStyle}>
+                    Here is some text below an image.
+                </Text>
+            </Surface>
         );
+
+
+
+        // return (
+        //     <canvas ref="canvas" width={500} height={500}/>
+        // );
 
 
     }
@@ -48,10 +67,6 @@ function buildGrid(ctx, canvasWidth, canvasHeight, cellWidth, cellHeight, color,
 
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
-    // var canvas = $('#' + div + '').get(0);
-    // var ctx = canvas.getContext("2d");
-    //ctx.fillStyle="rgba(255, 255, 255, 0)";
-    //ctx.fillRect(0, 0, 500, 300);
     ctx.lineWidth = 0.5;
     ctx.strokeStyle = color;
 
