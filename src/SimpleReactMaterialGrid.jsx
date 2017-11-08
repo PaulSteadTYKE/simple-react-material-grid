@@ -42,7 +42,6 @@ export default class extends Component {
 
         return (
             <div style={containerStyle} className="ag-fresh">
-                <h1>Simple ag-Grid React Example</h1>
                 <AgGridReact
                     // properties
                     columnDefs={this.state.columnDefs}
