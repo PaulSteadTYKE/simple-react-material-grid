@@ -9,7 +9,7 @@ import "ag-grid-root/dist/styles/theme-fresh.css";
 // import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import SimpleReactMaterialGrid from './SimpleReactMaterialGrid.jsx';
+import GridDemoWrapper from './GridDemoWrapper.jsx';
 
 
 
@@ -21,8 +21,8 @@ class GridDemo extends Component {
         return (
             <MuiThemeProvider>
                 <div>
-                    <h1>Simple React Material Grid Example</h1>
-                    <div className="main_body"><SimpleReactMaterialGrid/></div>
+                    <h1>Simple React Material Grid Example NO 2</h1>
+                    <div className="main_body"><GridDemoWrapper/></div>
                 </div>
             </MuiThemeProvider>
         );

@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {AgGridReact} from "ag-grid-react";
 
-export default class extends Component {
+class SimpleReactMaterialGrid extends Component {
     constructor(props) {
         super(props);
 
@@ -53,4 +53,6 @@ export default class extends Component {
             </div>
         )
     }
-};
+}
+
+export default SimpleReactMaterialGrid;
