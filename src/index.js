@@ -11,8 +11,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import GridDemoWrapper from './GridDemoWrapper.jsx';
 
-
-
 class GridDemo extends Component {
 
     render() {

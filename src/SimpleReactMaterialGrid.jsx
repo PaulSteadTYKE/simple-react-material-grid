@@ -6,7 +6,7 @@ class SimpleReactMaterialGrid extends Component {
         super(props);
 
         this.state = {
-            columnDefs: this.createColumnDefs(),
+            columnDefs: this.props.columns,
             rowData: this.createRowData()
         }
     }
@@ -18,19 +18,13 @@ class SimpleReactMaterialGrid extends Component {
         this.gridApi.sizeColumnsToFit();
     }
 
-    createColumnDefs() {
-        return [
-            {headerName: "Make", field: "make"},
-            {headerName: "Model", field: "model"},
-            {headerName: "Price", field: "price"}
-        ];
-    }
+    
 
     createRowData() {
         return [
-            {make: "Toyota", model: "Celica", price: 35000},
-            {make: "Ford", model: "Mondeo", price: 32000},
-            {make: "Porsche", model: "Boxter", price: 72000}
+            {account: "Toyota", detail: "Celica", debit: 35000, credit: null},
+            {account: "Ford", detail: "Mondeo", debit: 32000, credit: null},
+            {account: "Porsche", detail: "Boxter", debit: 72000, credit: null}
         ];
     }
 
