@@ -7,30 +7,36 @@ class SimpleReactMaterialGrid extends Component {
 
         this.state = {
             columnDefs: this.props.columns,
-            rowData: this.createRowData()
+            initialRows: this.props.initialRows,
+            rowData: []
+        }
+
+        // Bind non-React methods
+        this.addRow = this.addRow.bind(this);
+        this.addEmptyRow = this.addEmptyRow.bind(this);
+
+        for (let i = 0; i < this.state.initialRows; i++) {
+            this.addEmptyRow();
         }
     }
 
     onGridReady(params) {
         this.gridApi = params.api;
         this.columnApi = params.columnApi;
-
         this.gridApi.sizeColumnsToFit();
     }
 
-    
-
-    createRowData() {
-        return [
-            {account: "Toyota", detail: "Celica", debit: 35000, credit: null},
-            {account: "Ford", detail: "Mondeo", debit: 32000, credit: null},
-            {account: "Porsche", detail: "Boxter", debit: 72000, credit: null}
-        ];
+    addEmptyRow() {
+        this.addRow({account: null, detail: null, debit: null, credit: null});
     }
 
+    addRow(row) {
+        this.state.rowData.push(row);
+    }
+    
     render() {
         let containerStyle = {
-            height: 115,
+            height: 200,
             width: 500
         };
 

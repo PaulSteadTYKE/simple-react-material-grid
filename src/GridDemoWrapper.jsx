@@ -19,7 +19,7 @@ class GridDemoWrapper extends Component {
 
     render() {
         return (
-            <SimpleReactMaterialGrid columns={this.state.columns} initialColumns={5}/>
+            <SimpleReactMaterialGrid columns={this.state.columns} initialRows={5}/>
         );
 
 
