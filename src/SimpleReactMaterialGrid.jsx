@@ -33,7 +33,7 @@ class SimpleReactMaterialGrid extends Component {
     addRow(row) {
         this.state.rowData.push(row);
     }
-    
+
     render() {
         let containerStyle = {
             height: 200,
