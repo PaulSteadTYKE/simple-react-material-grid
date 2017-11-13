@@ -19,7 +19,7 @@ class GridDemo extends Component {
         return (
             <MuiThemeProvider>
                 <div>
-                    <h1>Simple React Material Grid Example NO 2</h1>
+                    <h1>Simple React Material Grid Example No 3</h1>
                     <div className="main_body"><GridDemoWrapper/></div>
                 </div>
             </MuiThemeProvider>
