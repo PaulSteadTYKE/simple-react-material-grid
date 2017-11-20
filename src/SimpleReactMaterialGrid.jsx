@@ -20,28 +20,33 @@ class SimpleReactMaterialGrid extends Component {
         //     this.addEmptyRow();
         // }
     }
-
     onGridReady(params) {
+        console.log('onGridReady');
         this.gridApi = params.api;
+        // this.state.gridApi = params.api;
         this.columnApi = params.columnApi;
+        console.log('calling sizeColumnsToFit');
         this.gridApi.sizeColumnsToFit();
+
+        // this.addRow({account: 1, detail: null, debit: null, credit: null});
+
+        // this.rowData.push({account: 1, detail: null, debit: null, credit: null});
+        this.gridApi.updateRowData({add: [{account: 1, detail: null, debit: null, credit: null}], addIndex: 2});
+
+        this.addAnotherRow();
+
     }
 
-    // addEmptyRow() {
-    //     this.addRow({account: null, detail: null, debit: null, credit: null});
-    // }
-
-    addRow(row) {
-        this.state.rowData.push(row);
-        this.gridApi.updateRowData();
-    }
+    addAnotherRow() {
+        console.log('adding row inside SRMG' + row);
+        this.gridApi.updateRowData({add: [{account: 10, detail: null, debit: null, credit: null}], addIndex: 4});
+    };
 
     render() {
         let containerStyle = {
             height: 200,
             width: 500
         };
-
         return (
             <div style={containerStyle} className="ag-fresh">
                 <AgGridReact
@@ -53,8 +58,16 @@ class SimpleReactMaterialGrid extends Component {
                     onGridReady={this.onGridReady}>
                 </AgGridReact>
             </div>
-        )
+        );
     }
+
 }
+
+// addRow = (row) =>  {
+//     console.log('adding row inside SRMG...');
+//     // this.state.rowData.push(row);
+//     // this.gridApi.updateRowData();
+// };
+
 
 export default SimpleReactMaterialGrid;
