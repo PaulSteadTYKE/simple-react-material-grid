@@ -11,7 +11,7 @@ class GridDemoWrapper extends Component {
 
     render() {
         return (
-            <DirectEntryGrid initialRows={6}/>
+            <DirectEntryGrid />
         );
     }
 }
